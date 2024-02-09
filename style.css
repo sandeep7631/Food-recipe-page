@@ -19,7 +19,7 @@ hr{
 .img{
     width: 600px;
     height: 300px;
-    background-image: url(/assets/images/image-omelette.jpeg);
+    background-image: url(image-omelette.jpeg);
     background-size: cover;
     border-radius: 20px;
     position: relative;
