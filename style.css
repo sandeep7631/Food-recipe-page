@@ -1,127 +1,97 @@
-body{
-    background-color:antiquewhite ;
+body {
+    background-color: antiquewhite;
+    margin: 0;
+    font-family: sans-serif;
 }
 
-hr{
-    width: 85%;
-}
-
-.outer{
-    height: 1550px;
-    width: 700px;
+.outer {
     background-color: white;
     border-radius: 20px;
-    position: absolute;
-    top: 80px;
-    left: 270px;
-    }
+    width: 700px;
+    height: auto;
+    margin: 20px auto;
+    padding: 20px;
+    position: relative;
+    transition: filter 0.5s ease;  /* Add transition for smooth blur */
+}
 
-.img{
+.img {
     width: 600px;
     height: 300px;
     background-image: url(image-omelette.jpeg);
     background-size: cover;
     border-radius: 20px;
+    margin: 20px auto;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;  /* Smooth zoom and shadow effect */
     position: relative;
-    top: 50px;
-    left: 50px;
-}  
-
-h1{
-    position: absolute;
-    top: 360px;
-    left: 50px;
-}
-#intro{
-    height: 200px;
-    width: 600px;
-    position: relative;
-    top: 130px;
-    left: 50px;
-    overflow: hidden;
-    font-size: 13px;
-    font-family: sans-serif;
+    z-index: 2;  /* Bring image to front when hovering */
 }
 
-.time{
-    background-color: hsl(330, 100%, 98%);
-    height: 150px;
-    width: 500px;
-    border-radius: 20px;
-    padding: 10px;
-    position: relative;
-    left: 50px;
+h1, #intro, .time, .ingredients, .instruction, .nutrition {
+    transition: filter 0.5s ease;  /* Smooth blur transition */
 }
 
-.time > ul{
-    
-    color: hsl(30, 10%, 34%);
-    line-height: 1.8;
+/* Hover on the omelette image */
+.img:hover {
+    transform: scale(1.1);  /* Zoom in slightly */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);  /* Add shadow for depth */
 }
 
-.time > h3{
-    margin: 23px;
-    color: hsl(332, 51%, 32%);
+/* When hovering on the image, blur the rest of the content */
+.img:hover ~ h1,
+.img:hover ~ #intro,
+.img:hover ~ .time,
+.img:hover ~ .ingredients,
+.img:hover ~ .instruction,
+.img:hover ~ .nutrition {
+    filter: blur(5px);  /* Apply blur effect to other elements */
 }
 
-.ingredients{
-    position: relative;
-    left: 50px;
+/* Responsive Design */
+@media (max-width: 768px) {
+    .outer {
+        width: 90%;
+    }
+
+    .img, #intro, .time, .ingredients, .instruction, .nutrition {
+        width: 100%;
+    }
+
+    .img {
+        height: 200px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    #intro {
+        font-size: 0.9rem;
+    }
 }
 
-.ingredients > h2{
-    color: hsl(14, 45%, 36%);
-    margin: 10px; 
-}
+@media (max-width: 480px) {
+    .outer {
+        width: 95%;
+    }
 
-.ingredients > ul{
-    
-    color: hsl(30, 10%, 34%);
-    line-height: 1.8;
-}
+    .img {
+        height: 150px;
+    }
 
-.instruction{
-    width: 600px;
-    position: relative;
-    left: 50px;
-}
+    h1 {
+        font-size: 1.2rem;
+    }
 
-.instruction > h2{
-    color: hsl(14, 45%, 36%);
-    margin: 10px;
-}
+    #intro {
+        font-size: 0.8rem;
+    }
 
-.instruction > ol{
-    
-    color: hsl(30, 10%, 34%);
-    line-height: 1.8;
-}
+    .time, .ingredients, .instruction, .nutrition {
+        padding: 0 10px;
+    }
 
-.instruction > li{
-    color: hsl(14, 45%, 36%);
-}
-
-.nutrition{
-    width: 600px;
-    position: relative;
-    left: 50px;
-}
-
-.nutrition > h2{
-    
-    color: hsl(14, 45%, 36%);
-    line-height: 1.8;
-}
-
-table{
-    width: 100%;
-}
-
-.nutrition > p,td{
-    color: hsl(30, 10%, 34%);
-}
-
-.info{
-    color: hsl(14, 45%, 36%);
-    font-weight: bold;
+    .nutrition table {
+        font-size: 0.8rem;
+    }
 }
