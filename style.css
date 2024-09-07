@@ -7,12 +7,11 @@ body {
 .outer {
     background-color: white;
     border-radius: 20px;
-    width: 700px;
-    height: auto;
+    width: 700px;  
+    height: auto;  
     margin: 20px auto;
     padding: 20px;
     position: relative;
-    transition: filter 0.5s ease;  /* Add transition for smooth blur */
 }
 
 .img {
@@ -22,29 +21,69 @@ body {
     background-size: cover;
     border-radius: 20px;
     margin: 20px auto;
-    transition: transform 0.5s ease, box-shadow 0.5s ease;  /* Smooth zoom and shadow effect */
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
     position: relative;
-    z-index: 2;  /* Bring image to front when hovering */
+    z-index: 2;  
 }
 
-h1, #intro, .time, .ingredients, .instruction, .nutrition {
-    transition: filter 0.5s ease;  /* Smooth blur transition */
+h1 {
+    text-align: center;
+    margin: 20px 0;
 }
 
-/* Hover on the omelette image */
+#intro {
+    width: 600px;
+    margin: 20px auto;
+    font-size: 13px;
+    text-align: center;
+}
+
+.time, .ingredients, .instruction, .nutrition {
+    width: 600px;  
+    margin: 20px auto;
+    background-color: hsl(330, 100%, 98%);  /* Add background color */
+    border-radius: 20px;
+    padding: 10px;
+}
+
+.time h3, .ingredients h2, .instruction h2, .nutrition h2 {
+    color: hsl(14, 45%, 36%);
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #ccc;
+    width: 85%;
+    margin: 20px auto;
+}
+
+.nutrition table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.nutrition td {
+    padding: 10px;
+    text-align: left;
+}
+
+.nutrition .info {
+    font-weight: bold;
+}
+
+/* Hover effect */
 .img:hover {
-    transform: scale(1.1);  /* Zoom in slightly */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);  /* Add shadow for depth */
+    transform: scale(1.1);  
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);  
 }
 
-/* When hovering on the image, blur the rest of the content */
 .img:hover ~ h1,
 .img:hover ~ #intro,
 .img:hover ~ .time,
 .img:hover ~ .ingredients,
 .img:hover ~ .instruction,
 .img:hover ~ .nutrition {
-    filter: blur(5px);  /* Apply blur effect to other elements */
+    filter: blur(5px);  
 }
 
 /* Responsive Design */
